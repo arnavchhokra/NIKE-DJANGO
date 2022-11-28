@@ -1,0 +1,30 @@
+.Nav-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.Nav {
+  background-color: rgb(32, 28, 28);
+  height: 100vh;
+  position: fixed;
+  border-right: 1px solid grey;
+}
+
+.nav-image {
+  height: 50px;
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 200px;
+}
+
+.nav-link {
+  margin-bottom: 70px;
+  color: darkgray;
+}
+
+.arrows {
+  display: flex;
+  justify-content: space-around;
+}

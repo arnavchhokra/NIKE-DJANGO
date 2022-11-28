@@ -1,0 +1,52 @@
+.SingleProductPage-Home {
+  display: flex;
+  justify-content: space-between;
+}
+
+.SingleProductPage-Container {
+  margin-left: 400px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Antonio';
+}
+.SingleProductPage-Content {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 250px;
+}
+
+.SingleProductPage-Mainimg {
+  width: 500px;
+}
+.SingleProductPage-Title {
+  color: grey;
+  font-weight: bold;
+
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.SingleProductPage-Price {
+  font-size: 20px;
+  color: white;
+  font-weight: 600;
+
+  margin-bottom: 10px;
+}
+
+.SingleProductPage-button {
+  max-width: 200px;
+  font-family: 'Antonio';
+  font-weight: 800;
+  min-height: 40px;
+  margin-bottom: 10px;
+  background-color: red;
+}
+.SingleProductPage-desc {
+  font-weight: 400;
+  color: grey;
+  margin-right: 100px;
+}
+.SingleProductPage-button:hover {
+  color: white;
+}

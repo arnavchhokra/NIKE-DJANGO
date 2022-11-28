@@ -1,0 +1,75 @@
+.Cart-Container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Cart-payment-info {
+  min-height: 60vh;
+  min-width: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-right: 100px;
+  margin-top: 100px;
+  background-color: rgb(225, 225, 225);
+  border: 1px solid rgb(20, 20, 20);
+}
+
+.Cart-shipping {
+  border-bottom: 1px solid rgb(20, 20, 20);
+  font-family: 'Helvetica Neue', Helvetica;
+  font-weight: 200;
+  font-size: 17px;
+  min-height: 60%;
+}
+.Cart-total {
+  border-bottom: 1px solid rgb(20, 20, 20);
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Helvetica Neue', Helvetica;
+  font-weight: 200;
+  font-size: 17px;
+  min-height: 10%;
+}
+.Cart-subtotal {
+  border-bottom: 1px solid rgb(20, 20, 20);
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Helvetica Neue', Helvetica;
+  font-weight: 200;
+  font-size: 17px;
+  min-height: 10%;
+}
+.Cart-subtotal-Subtotal {
+  margin-left: 10px;
+}
+.Cart-subtotal-price {
+  margin-right: 10px;
+}
+
+.cart-total-Total {
+  margin-left: 10px;
+}
+
+.Cart-checkout-btn {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  min-height: 90px;
+}
+.Cart-checkout-btn:hover {
+  color: rgb(172, 172, 3);
+}
+
+.cart-total-Price {
+  margin-right: 10px;
+}
+
+.cart-shipping-Shipping {
+  margin-left: 10px;
+}
+
+.Cart-products-rows {
+  margin-left: 200px;
+  margin-top: 100px;
+}

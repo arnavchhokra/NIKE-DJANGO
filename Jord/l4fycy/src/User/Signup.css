@@ -1,0 +1,100 @@
+.Signup-home {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+.Signup-container {
+  margin-top: 20ch;
+  height: 55%;
+
+  text-align: center;
+  background-color: #9fa4c4;
+  background-image: linear-gradient(315deg, #9fa4c4 0%, #9e768f 74%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: 'Helvetica Neue', Helvetica;
+  min-width: 80vh;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+
+  border-radius: 20px;
+}
+
+.Signup-create {
+  margin-top: 50px;
+  font-size: 35px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.Sigunp-login-sub {
+  font-size: 25px;
+  color: white;
+}
+
+.Signup-login {
+  font-size: 15px;
+  color: darkblue;
+}
+
+.Signup-Names {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Signup-FirstName {
+  margin-left: 50px;
+  min-height: 30px;
+  border: 3px solid rgb(201, 201, 201);
+  border-radius: 6px;
+}
+
+.Signup-LastName {
+  min-height: 30px;
+  margin-right: 50px;
+
+  border: 3px solid rgb(201, 201, 201);
+  border-radius: 6px;
+}
+
+.Signup-Email {
+  margin-right: 50px;
+
+  margin-left: 50px;
+
+  margin-top: 20px;
+  border-radius: 3px;
+  min-height: 30px;
+
+  border: 5px solid rgb(201, 201, 201);
+}
+
+.Signup-Password {
+  margin-right: 50px;
+
+  margin-left: 50px;
+
+  margin-top: 20px;
+  border-radius: 3px;
+  min-height: 30px;
+
+  border: 5px solid rgb(201, 201, 201);
+}
+
+.Signup-btn {
+  margin-right: 50px;
+
+  margin-left: 50px;
+
+  margin-top: 20px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  min-height: 30px;
+  margin-bottom: 60px;
+  background-color: black;
+  color: white;
+}

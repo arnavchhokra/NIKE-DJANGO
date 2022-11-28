@@ -1,0 +1,21 @@
+.CartProduct-row {
+  display: flex;
+  justify-content: space-between;
+  min-width: 700px;
+  font-size: 17px;
+
+  border: 1px solid black;
+  margin-bottom: 10px;
+  font-family: 'Helvetica Neue', Helvetica;
+}
+.CartProduct-image {
+  margin-left: 5px;
+  width: 150px;
+}
+.CartProduct-Price {
+  margin-right: 20px;
+  margin-top: 90px;
+}
+.CartProduct-Name {
+  margin-top: 90px;
+}

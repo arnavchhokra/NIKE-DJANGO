@@ -1,0 +1,93 @@
+.ProductPage-Home {
+  overflow-x: clip;
+}
+.Nav-Product {
+  display: fixed;
+}
+
+.ProductPage-rows {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-left: 30px;
+}
+
+.ProductPage-Container {
+  margin-left: 120px;
+}
+
+.ProductPage-Search {
+  margin-top: 10px;
+  height: 10vh;
+}
+
+.ProductPage-Search {
+  margin-left: 9px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.ProductPage-Input {
+  margin-right: 20px;
+  margin-top: 10px;
+  display: flex;
+  height: 50%;
+}
+
+.dropbtn {
+  margin-right: 20px;
+  margin-top: 5px;
+  background-color: rgb(209, 208, 208);
+  border-radius: 7px;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  min-width: 120px;
+  border: 1px solid grey;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  margin-right: 50px;
+  display: none;
+  position: absolute;
+  min-width: 125px;
+
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.Product-Search-Input {
+  border-radius: 7px;
+}

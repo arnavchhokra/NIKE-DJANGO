@@ -1,0 +1,187 @@
+.home {
+  background-color: rgb(32, 28, 28);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+.home-container {
+  background-color: rgb(32, 28, 28);
+  height: 91vh;
+  width: 100%;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.three {
+  position: absolute;
+  z-index: 0;
+  left: 450px;
+  right: 0;
+  top: 80px;
+  bottom: 0;
+  margin-left: -130px;
+  width: 800px;
+}
+
+.home-banner {
+  min-height: 300px;
+  text-align: center;
+}
+
+.home-banner-bottom {
+  z-index: 1;
+
+  display: flex;
+  justify-content: space-between;
+  margin-top: 600px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: white;
+}
+
+.banner-bottom-link {
+  color: white;
+  text-decoration: none;
+  font-family: 'Exo';
+  margin-top: 25px;
+  font-size: 20px;
+  letter-spacing: 1.5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.threesub {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  margin-top: -280px;
+  color: grey;
+  font-family: 'Antonio';
+  font-weight: 200;
+  font-size: 40px;
+  text-align: left;
+  margin-left: 300px;
+  overflow: hidden;
+  float: left;
+}
+#akat {
+  color: rgb(107, 1, 1) !important;
+}
+.threesixty {
+  z-index: 0;
+  margin-top: -420px;
+  color: rgb(100, 1, 100);
+  font-family: 'Antonio';
+  font-weight: bold;
+  font-size: 140px;
+  margin-left: 200px;
+  overflow: hidden;
+  float: left;
+}
+
+.threename {
+  transform: rotate(90deg);
+  z-index: 0;
+  margin-top: -380px;
+  color: rgb(78, 78, 78);
+  font-family: 'Antonio';
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 140px;
+  overflow: hidden;
+  float: right;
+}
+
+.Liq {
+  background-color: rgb(32, 28, 28);
+
+  margin-top: 200px;
+  font-family: 'Antonio';
+  letter-spacing: 2px;
+  font-size: 30px;
+  text-align: center;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+
+  margin-bottom: 90px;
+}
+.product-category-row {
+  display: flex;
+  justify-content: space-around;
+  margin-left: -20px;
+  margin-top: -50px;
+}
+.Liq-text {
+  margin-left: 60px;
+  margin-bottom: 90px;
+}
+
+.word {
+  margin: auto;
+  color: rgb(78, 78, 78);
+  font: 700 normal 2.5em 'tahoma';
+  text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+}
+
+.Liq-container {
+  text-align: center;
+  color: grey;
+}
+
+.home-yt {
+  margin-left: 122px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.Products-title {
+}
+
+.Products-rows {
+  display: flex;
+  margin-top: 0px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.products {
+  margin: 80px;
+  margin-left: 150px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.Products-title {
+  padding-top: 30px;
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  font-family: 'Exo';
+  font-size: 50px;
+}
+
+.changing {
+  margin-left: 30px;
+  color: rgb(162, 162, 162);
+  font-size: 50px;
+  margin-top: -180px;
+  margin-left: 450px;
+}
+.changing-text {
+  font-family: 'Antonio';
+  font-size: 200px;
+  font-weight: bold;
+}
+#spin {
+  color: rgb(107, 1, 1);
+}
+#spin:after {
+  content: '';
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+  0% {
+    content: 'Max';
+  }
+  50% {
+    content: 'Force';
+  }
+  100% {
+    content: 'Jordans';
+  }
+}
