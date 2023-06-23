@@ -4,4 +4,10 @@
 
 * {
   cursor: url('https://cdn.custom-cursor.com/db/pointer/32/Nike_Air_Max_97Pointer.png'), auto;
+
+}
+
+body{
+  overflow-x: hidden;
+
 }

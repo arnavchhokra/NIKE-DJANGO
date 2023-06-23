@@ -47,13 +47,15 @@ export default function App() {
 
     
     <div className="home">
-      <Nav />
+              <Nav />
 
       <div className="home-container">
-        <div className="nav"></div>
+        <div className="nav">
+
+        </div>
         <div className="home-banner">
           <span class="threesixty">
-            <span id="akat">AKAT</span>SUKI
+            <span id="akat">AKAT <span style={{color:"purple", marginLeft:"-40px"}}>SUKI</span></span>
           </span>
           <span class="threesub">
             Discover the story behind <br />
