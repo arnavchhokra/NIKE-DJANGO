@@ -1,8 +1,9 @@
-import { useRef, useState, Suspense } from 'react'
+import { useRef, useState, Suspense, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import './App.css'
 import { useGLTF } from '@react-three/drei'
 import { OrbitControls, Html, draco } from '@react-three/drei'
+
 import Nav from './Navigation/Nav'
 import ProductCat from './Product/ProductCat'
 import Products from './Products/Products'
@@ -41,18 +42,28 @@ function Lights() {
   )
 }
 
+
 export default function App() {
+
+
   return (
 
 
     
     <div className="home">
               <Nav />
+              <span class="threename">AIR FORCE</span>
+              <div className="three"><Canvas colorManagement shadowMap camera={{ position: [-5, 0, 10], fov: 35 }}>
+              <ambientLight intensity={0.5} />
+              <OrbitControls enableZoom={false} rotateSpeed={0.3 } enablePan={false} />
+              <Suspense fallback={null}>
+                <directionalLight intensity={1} position={[100, 0, 0]} />
+                <directionalLight intensity={1} position={[0, 100, 0]} />
+                <Shoe />
+              </Suspense>
+            </Canvas></div>
 
       <div className="home-container">
-        <div className="nav">
-
-        </div>
         <div className="home-banner">
           <span class="threesixty">
             <span id="akat">AKAT <span style={{color:"purple", marginLeft:"-40px"}}>SUKI</span></span>
@@ -61,22 +72,7 @@ export default function App() {
             Discover the story behind <br />
             the sharingan
           </span>
-          <span class="threename">AIR FORCE</span>
-
-          <div className="three">
-            <Canvas colorManagement shadowMap camera={{ position: [-5, 0, 10], fov: 40 }}>
-              <ambientLight intensity={0.5} />
-              <OrbitControls enableZoom={false} rotateSpeed={0.3} enablePan={false} />
-              <Suspense fallback={null}>
-                <directionalLight intensity={1} position={[100, 0, 0]} />
-                <directionalLight intensity={1} position={[0, 100, 0]} />
-                <Shoe />
-              </Suspense>
-            </Canvas>
-          </div>
-          <div className="home-banner-bottom"></div>
         </div>
-        <script></script>
         <div class="changing">
           <span className="changing-text">
             <p>

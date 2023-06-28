@@ -1,60 +1,82 @@
 .home {
   background-color: rgb(32, 28, 28);
   display: flex;
-  justify-content: space-between;
   border-radius: 10px;
 }
 
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 900px) {
  .home{
   display: block;
 
  }
- .threename{
-  display:none !important;
+
+  .threesixty {
+  margin-left: 0vw !important;
+ }
+ .three{
+  position: absolute;
+  top: 58% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  height:80vh;
+ }
+ .home-banner{
+  align-items: center !important;
+  margin-top: 30vh;
  }
 
-
-
-
 }
+@media screen and (max-width: 1100px) {
+   .threename{
+  display:none !important;
+ }
+ .threesixty {
+  margin-left: 0vw !important;
+ }
+ .changing {
+  margin-left: 0vw !important;
+ }
+ .Liq{
+  display: none !important;
+ }
+ .home-yt {
+  margin-left: 0px !important;
+  width:100vw;
+ }
+ .home-banner{
+  
+ }
+ 
+}
+
 
 .home-container {
   background-color: rgb(32, 28, 28);
   height: 100vh;
-  width: 100%;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 .three {
   position: absolute;
   z-index: 0;
-  left: 450px;
+  left: 25vw;
   right: 0;
-  top: 80px;
+  top: 170px;
   bottom: 0;
   margin-left: -130px;
-  width: 800px;
+  width: 1000px;
 }
 
 .home-banner {
-  min-height: 300px;
+  min-height: 100vh;;
   display:flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: column;
+  align-items: left;
+  width:100vw;
 }
 
-.home-banner-bottom {
-  z-index: 1;
-
-  display: flex;
-  justify-content: space-between;
-  margin-top: 600px;
-  margin-left: 10px;
-  margin-right: 10px;
-  color: white;
-}
 
 .banner-bottom-link {
   color: white;
@@ -67,63 +89,73 @@
   margin-right: 10px;
 }
 .threesub {
-  display: block;
-  position: absolute;
   z-index: 2;
-  margin-top: -280px;
   color: grey;
   font-family: 'Antonio';
   font-weight: 200;
   font-size: 40px;
-  text-align: left;
-  margin-left: 300px;
+  font-size: clamp(2rem,6vw,3rem);
+  width:70vw;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
   overflow: hidden;
-  float: left;
 }
 #akat {
   color: rgb(107, 1, 1) !important;
-  height: 40vh;
-  width:50vw
 }
 .threesixty {
   color: rgb(100, 1, 100);
   font-family: 'Antonio';
   font-weight: bold;
-  font-size: calc(3rem + 10vw);
-  margin-left: 200px;
-  overflow: hidden;
+  font-size: clamp(8rem,15vw,10rem);
   float: left;
-  height:100vh;
   display:flex;
-  flex-direction: column;
-  align-items: center;
-  width:100vw;
-  justify-content: center;
+margin-left: 27vh;
 }
 
 .threename {
-  transform: rotate(90deg);
   z-index: 0;
-  margin-top: -380px;
   color: rgb(78, 78, 78);
   font-family: 'Antonio';
   font-weight: 600;
-  letter-spacing: 1px;
-  font-size: 140px;
+  font-size: 10vw;
   overflow: hidden;
-  float: right;
-  margin-right: 50px;
-  width: 100vh;
+  transform: rotate(90deg);
+  position:absolute;
+  left:70vw;
+  top:20vw;
+  width:80vh;
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .Liq {
   background-color: rgb(32, 28, 28);
 
-  margin-top: 200px;
   font-family: 'Antonio';
   letter-spacing: 2px;
   font-size: 30px;
   text-align: center;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 
   margin-bottom: 90px;
@@ -131,7 +163,9 @@
 .product-category-row {
   display: flex;
   justify-content: space-around;
-  margin-left: -20px;
+  align-items: center;
+  width: 100vw;;
+  margin-left: 0px;
   margin-top: -50px;
 }
 .Liq-text {
@@ -155,6 +189,16 @@
   margin-left: 122px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
+
+
+
+
+
+
+
+
+
+
 
 .Products-title {
 }
@@ -182,15 +226,17 @@
 }
 
 .changing {
-  margin-left: 30px;
   color: rgb(162, 162, 162);
   font-size: 50px;
-  margin-top: -180px;
-  margin-left: 450px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 7vw;;
 }
 .changing-text {
   font-family: 'Antonio';
-  font-size: 200px;
+  font-size: clamp(6rem,15vw,10rem);
   font-weight: bold;
 }
 #spin {
