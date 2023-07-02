@@ -2,15 +2,15 @@ from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer
 from .models import *
 
-class CartProductsSerializer(ModelSerializer):
-    class Meta:
-        model = CartProducts
-        fields = "__all__"
+#class CartProductsSerializer(ModelSerializer):
+   # class Meta:
+   #     model = CartProducts
+   #     fields = "__all__"
 
-class CartSerializer(ModelSerializer):
-  class Meta:
-    model = Cart
-    fields = "__all__"
+#class CartSerializer(ModelSerializer):
+  #class Meta:
+  #  model = Cart
+   # fields = "__all__"
 
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
@@ -43,7 +43,7 @@ class UserLoginSerializer(serializers.ModelSerializer):
 class UserProfileSerializer(serializers.ModelSerializer):
   class Meta: 
     model= MyUser
-    fields = ['id','email','name']
+    fields = ['id','email','name','cart']
 
 
         #fields = ['id','email','name','cart']

@@ -1,13 +1,13 @@
 from django.shortcuts import render
-from .serializers import CartProductsSerializer
+#from .serializers import CartProductsSerializer
 from rest_framework import viewsets      
-from .models import CartProducts
+#from .models import CartProducts
 from django.http import response
 from rest_framework.serializers import Serializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from Products import serializers
-from .utils import getCartProductsList
+#from .utils import getCartProductsList
 from django.http import JsonResponse
 
 
@@ -46,6 +46,10 @@ class UserRegistrationView(APIView):
         serializer = UserRegistrationSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             user = serializer.save()
+             # Create a cart for the user
+            cart = Cart.objects.create()
+            user.cart = cart
+            user.save()
             token = get_tokens_for_user(user)
             return Response({'token':token,'msg':'Registration Success'},status = status.HTTP_201_CREATED)
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
@@ -96,7 +100,19 @@ def getRoutes(request):
 
 
 
-   
+@api_view(['GET'])
+def CartView(request):
+    user = request.user 
+    if user.is_authenticated:# Retrieve the authenticated user
+        cart = user.cart 
+        serializer = CartSerializer(cart)
+        return Response(serializer.data)
+    else:
+        return Response({'error':'Not authenticated'})
+
+
+
+
 
 
 
