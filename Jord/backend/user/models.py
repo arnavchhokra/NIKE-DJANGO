@@ -77,3 +77,9 @@ class CartItem(models.Model):
     item = models.ForeignKey(Products, on_delete=models.PROTECT)  # Replace 'your_app.Item' with your actual item model.
     quantity = models.PositiveIntegerField(default=1)
     cart = models.ForeignKey(Cart, on_delete=models.PROTECT, null=True, blank=True)
+
+
+class OrderItem(models.Model):
+    user = models.ForeignKey(MyUser, on_delete=models.PROTECT)
+    item = models.ForeignKey(CartItem, on_delete=models.PROTECT)
+    OrderTime = models.TimeField(auto_now_add=True)

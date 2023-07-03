@@ -1,5 +1,6 @@
 from django.contrib import admin
-#from .models import CartProducts 
+
+# from .models import CartProducts
 from django.contrib import admin
 from .models import *
 from django import forms
@@ -12,12 +13,14 @@ from user.models import MyUser
 
 
 class UserCreationForm(forms.ModelForm):
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
+    password1 = forms.CharField(label="Password", widget=forms.PasswordInput)
+    password2 = forms.CharField(
+        label="Password confirmation", widget=forms.PasswordInput
+    )
 
     class Meta:
         model = MyUser
-        fields = ('email', 'name')
+        fields = ("email", "name")
 
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
@@ -39,7 +42,7 @@ class UserChangeForm(forms.ModelForm):
 
     class Meta:
         model = MyUser
-        fields = ('email', 'password', 'name', 'is_admin')
+        fields = ("email", "password", "name", "is_admin")
 
 
 class UserAdmin(BaseUserAdmin):
@@ -50,23 +53,29 @@ class UserAdmin(BaseUserAdmin):
     # The fields to be used in displaying the User model.
     # These override the definitions on the base UserAdmin
     # that reference specific fields on auth.User.
-    list_display = ('id','email', 'name', 'is_admin','cart')                    #'cart'
-    list_filter = ('is_admin',)
+    list_display = ("id", "email", "name", "is_admin", "cart")  #'cart'
+    list_filter = ("is_admin",)
     fieldsets = (
-        ('User Credentials', {'fields': ('email', 'password','cart')}),
-        ('Personal info', {'fields': ('name',)}),                            #'cart'
-        ('Permissions', {'fields': ('is_admin',)}),
+        ("User Credentials", {"fields": ("email", "password", "cart")}),
+        ("Personal info", {"fields": ("name",)}),  #'cart'
+        ("Permissions", {"fields": ("is_admin",)}),
     )
     # add_fieldsets is not a standard ModelAdmin attribute. UserAdmin
     # overrides get_fieldsets to use this attribute when creating a user.
     add_fieldsets = (
-        (None, {
-            'classes': ('wide',),
-            'fields': ('email', 'name', 'password1', 'password2'),
-        }),
+        (
+            None,
+            {
+                "classes": ("wide",),
+                "fields": ("email", "name", "password1", "password2"),
+            },
+        ),
     )
-    search_fields = ('email',)
-    ordering = ('email','id',)
+    search_fields = ("email",)
+    ordering = (
+        "email",
+        "id",
+    )
     filter_horizontal = ()
 
 
@@ -74,4 +83,5 @@ admin.site.register(MyUser, UserAdmin)
 admin.site.unregister(Group)
 admin.site.register(Cart)
 admin.site.register(CartItem)
-#admin.site.register(CartProducts)
+# admin.site.register(CartProducts)
+admin.site.register(OrderItem)
