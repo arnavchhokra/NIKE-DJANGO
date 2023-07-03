@@ -2,12 +2,14 @@ from django.db import models
 from Products.models import *
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 
-
 # Create your models here.
+
+
+
 class Cart(models.Model):
     total_price = models.DecimalField(max_digits=7, decimal_places=2,default=0.00)
-    CartProducts = models.ManyToManyField(Products, blank=True, null=True)
-
+    #CartProducts = models.ForeignKey(Products, blank=True, null=True, on_delete=models.PROTECT)
+    #CartProducts = models.ManyToManyField(CartItem, blank=True)
 
 class MyUserManager(BaseUserManager):
     def create_user(self, email, name, password=None, password2=None):
@@ -70,4 +72,8 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
     def is_staff(self):
         return self.is_admin
 
-   
+
+class CartItem(models.Model):
+    item = models.ForeignKey(Products, on_delete=models.PROTECT)  # Replace 'your_app.Item' with your actual item model.
+    quantity = models.PositiveIntegerField(default=1)
+    cart = models.ForeignKey(Cart, on_delete=models.PROTECT, null=True, blank=True)

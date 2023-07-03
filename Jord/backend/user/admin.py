@@ -73,4 +73,5 @@ class UserAdmin(BaseUserAdmin):
 admin.site.register(MyUser, UserAdmin)
 admin.site.unregister(Group)
 admin.site.register(Cart)
+admin.site.register(CartItem)
 #admin.site.register(CartProducts)
