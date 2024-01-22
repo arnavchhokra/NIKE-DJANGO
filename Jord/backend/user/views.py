@@ -27,6 +27,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import renderers
 from rest_framework import permissions
 from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 
 
 # class ProductsView(viewsets.ModelViewSet):
@@ -108,23 +109,77 @@ def getRoutes(request):
     ]
     return Response(routes)
 
+#        if request.user.is_authenticated:
 
-@api_view(["GET"])
-def CartView(request):
-    user = request.user
-    if user.is_authenticated:  # Retrieve the authenticated user
-        cart = user.cart
-        serializer = CartSerializer(cart)
-        return Response(serializer.data)
+
+
+
+
+
+
+
+@api_view(['POST'])
+def add_to_cart(request, product_id):
+    if request.user.is_authenticated:
+        usery = request.user
+        carted= usery.user_cart
+        product = get_object_or_404(Products, pk=product_id)
+
+        if product not in carted.cartproduct.all():
+            carted.cartproduct.add(product)
+            carted.save()
+
+        serializer = CartSerializer(carted)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
     else:
-        return Response({"error": "Not authenticated"})
+        return Response({"error": "Not authenticated"}, status=status.HTTP_400_BAD_REQUEST)
 
 
-@api_view(["GET"])
-def user_cart_items(request, user_id):
-    cart_items = CartItem.objects.filter(cart__user_id=user_id)
-    serializer = CartItemSerializer(cart_items, many=True)
-    return Response(serializer.data)
+
+
+@api_view(['POST'])
+def remove_from_cart(request, product_id):
+    if request.user.is_authenticated:
+        usery = request.user
+        carted= usery.user_cart
+        product = get_object_or_404(Products, pk=product_id)
+
+        if product in carted.cartproduct.all():
+            carted.cartproduct.remove(product)
+            carted.save()
+
+        serializer = CartSerializer(carted)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    else:
+        return Response({"error": "Not authenticated"}, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+def view_cart(request):
+    if request.user.is_authenticated:
+        usery = request.user
+        carted= usery.user_cart
+        serializer = CartSerializer(carted)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    else:
+        return Response({"error": "Not authenticated"}, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @api_view(["GET"])
@@ -136,15 +191,6 @@ def user_orders(request, user_id):
 
 # Ensure only authenticated users can access the view
 
-
-@api_view(["POST"])
-def add_cart_item(request):
-    user = request.user
-    serializer = CartItemSerializer(data=request.data)
-    if serializer.is_valid():
-        serializer.save(user=user)
-        return Response(serializer.data, status=201)
-    return Response(serializer.errors, status=400)
 
 
 def add_order(request):
@@ -160,7 +206,7 @@ def add_order(request):
 def remove_cart_item(request):
     user = request.user
     item_id = request.data.get("item_id")
-    cart_item = CartItem.objects.filter(cart__user=user, item_id=item_id).first()
+    cart_item = Cart.objects.filter(cart__user=user, item_id=item_id).first()
     if cart_item:
         cart_item.delete()
         return Response(status=204)

@@ -7,9 +7,10 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseU
 
 
 class Cart(models.Model):
-    total_price = models.DecimalField(max_digits=7, decimal_places=2,default=0.00)
+    cartproduct = models.ManyToManyField("Products.Products", null = True, related_name='cartss', blank = True)
     #CartProducts = models.ForeignKey(Products, blank=True, null=True, on_delete=models.PROTECT)
     #CartProducts = models.ManyToManyField(CartItem, blank=True)
+
 
 class MyUserManager(BaseUserManager):
     def create_user(self, email, name, password=None, password2=None):
@@ -20,7 +21,8 @@ class MyUserManager(BaseUserManager):
             email=self.normalize_email(email),
             name=name,
         )
-
+        cart = Cart.objects.create()  # Create the corresponding Cart instance
+        user.user_cart = cart
         user.set_password(password)
         user.save(using=self._db)
         return user
@@ -46,7 +48,7 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
     name = models.CharField(max_length=255)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
-    cart = models.OneToOneField(Cart,on_delete=models.CASCADE,null=True)
+    user_cart  = models.OneToOneField(Cart,on_delete=models.CASCADE,null=True)
     objects = MyUserManager()
 
     USERNAME_FIELD = 'email'
@@ -54,10 +56,8 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
 
     def save(self, *args, **kwargs):
         if self._state.adding:  # Check if the instance is being created
-            super().save(*args, **kwargs)  # Save the user instance first
-            cart = Cart.objects.create()  # Create the corresponding Cart instance
-            self.cart = cart  # Assign the Cart instance to the user's cart field
-            self.save()  
+            super().save(*args, **kwargs)  # Save the user instance first   Assign the Cart instance to the user's cart field
+            self.save()
 
     def __str__(self):
         return self.email
@@ -73,13 +73,7 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
         return self.is_admin
 
 
-class CartItem(models.Model):
-    item = models.ForeignKey(Products, on_delete=models.PROTECT)  # Replace 'your_app.Item' with your actual item model.
-    quantity = models.PositiveIntegerField(default=1)
-    cart = models.ForeignKey(Cart, on_delete=models.PROTECT, null=True, blank=True)
-
 
 class OrderItem(models.Model):
     user = models.ForeignKey(MyUser, on_delete=models.PROTECT)
-    item = models.ForeignKey(CartItem, on_delete=models.PROTECT)
     OrderTime = models.TimeField(auto_now_add=True)

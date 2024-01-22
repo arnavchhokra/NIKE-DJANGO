@@ -13,12 +13,6 @@ class OrderItemSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class CartItemSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = CartItem
-        fields = "__all__"
-
-
 class CartSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cart
@@ -55,6 +49,6 @@ class UserLoginSerializer(serializers.ModelSerializer):
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = MyUser
-        fields = ["id", "email", "name", "cart"]
+        fields = ["id", "email", "name", "user_cart"]
 
         # fields = ['id','email','name','cart']

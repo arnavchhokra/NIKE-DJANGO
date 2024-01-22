@@ -7,6 +7,8 @@ import { OrbitControls, Html, draco } from '@react-three/drei'
 import Nav from './Navigation/Nav'
 import ProductCat from './Product/ProductCat'
 import Products from './Products/Products'
+import { ChakraProvider } from '@chakra-ui/react'
+
 
 
 function Shoe({ ...props }) {
@@ -15,7 +17,7 @@ function Shoe({ ...props }) {
   return (
     <group ref={group} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
-        <mesh geometry={nodes.Object_2.geometry} material={materials['Material.001']} rotation={[0.4, 0.9, -1.7]} scale={4.5} />
+        <mesh geometry={nodes.Object_2.geometry} material={materials['Material.001']} rotation={[0.4, 0.9, -1.7]} scale={3.5} />
       </group>
     </group>
   )
@@ -42,45 +44,43 @@ function Lights() {
   )
 }
 
-
 export default function App() {
-
-
   return (
-
-
-    
     <div className="home">
-              <Nav />
-              <span class="threename">AIR FORCE</span>
-              <div className="three"><Canvas colorManagement shadowMap camera={{ position: [-5, 0, 10], fov: 35 }}>
-              <ambientLight intensity={0.5} />
-              <OrbitControls enableZoom={false} rotateSpeed={0.3 } enablePan={false} />
-              <Suspense fallback={null}>
-                <directionalLight intensity={1} position={[100, 0, 0]} />
-                <directionalLight intensity={1} position={[0, 100, 0]} />
-                <Shoe />
-              </Suspense>
-            </Canvas></div>
+      <Nav />
+      <span class="threename" >AIR FORCE</span>
+      <div className="three">
+        <Canvas colorManagement shadowMap camera={{ position: [-5, 0, 10], fov: 35 }}>
+          <ambientLight intensity={0.5} />
+          <OrbitControls enableZoom={false} rotateSpeed={0.3} enablePan={false} />
+          <Suspense fallback={null}>
+            <directionalLight intensity={1} position={[100, 0, 0]} />
+            <directionalLight intensity={1} position={[0, 100, 0]} />
+            <Shoe />
+          </Suspense>
+        </Canvas>
+      </div>
 
       <div className="home-container">
         <div className="home-banner">
           <span class="threesixty">
-            <span id="akat">AKAT <span style={{color:"purple", marginLeft:"-40px"}}>SUKI</span></span>
+            <span id="akat">
+              AKAT <span style={{ color: 'purple', marginLeft: '-40px' }}>SUKI</span>
+            </span>
           </span>
           <span class="threesub">
             Discover the story behind <br />
             the sharingan
           </span>
         </div>
-        <div class="changing">
+        <div class="changing" style={{  background: '#201c1c'}}>
           <span className="changing-text">
             <p>
               Air <span id="spin"></span>
             </p>
           </span>
         </div>
-        <div className="Liq">
+        <div className="Liq" style={{  background: '#201c1c'}}>
           <div class="Liq-container">
             <h1 class="Liq-text">COLLECTION</h1>
             <div className="product-category-row">
@@ -90,18 +90,18 @@ export default function App() {
             </div>
           </div>
         </div>
-        <div className="home-yt">
+        <div className="home-yt" style={{  background: '#201c1c'}}>
           <iframe
-            width="100%"
+            width="92%"
             height="576"
-            src="https://www.youtube.com/embed/PZIqV7wNyyU?autoplay=1&controls=0&rel=0"
+            src="https://www.youtube.com/embed/V9fsOaa97F4?si=YhIvnBV7KxcpKNsj&amp;controls=0&rel=0"
             title="Never Settle, Never Done | Nike"
             rel="0"
             frameborder="0"
             allow="autoplay;"
-            allowfullscreen></iframe>
+            allowfullscreen ></iframe>
         </div>
-        <div className="products">
+        <div className="products" style={{  background: '#201c1c'}}>
           <div className="Products-rows">
             <Products />
           </div>

@@ -4,15 +4,25 @@
 }
 
 .Cart-payment-info {
-  min-height: 60vh;
-  min-width: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   margin-right: 100px;
-  margin-top: 100px;
-  background-color: rgb(225, 225, 225);
-  border: 1px solid rgb(20, 20, 20);
+  margin-top:30px;
+}
+
+Table, Td, Th{
+border: 1px solid grey;
+font-size: 20px;
+padding: 10px;
+border-radius: 5px !important;
+}
+Td{
+  padding: 20px;
+}
+Table{
+border-radius: 10px;
+width: 400px;
 }
 
 .Cart-shipping {
@@ -70,6 +80,4 @@
 }
 
 .Cart-products-rows {
-  margin-left: 200px;
-  margin-top: 100px;
 }

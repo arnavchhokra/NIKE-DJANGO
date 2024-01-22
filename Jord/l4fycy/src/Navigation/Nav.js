@@ -1,11 +1,12 @@
 import React from 'react'
 import './nav.css'
 import nike from '../assets/nikwehite.png'
+import { ChakraProvider } from '@chakra-ui/react'
 
 function Nav() {
   return (
-    <div className="Nav">
-      <div className="Nav-container">
+    <div className="Nav" >
+      <div className="Nav-container" >
         <img className="nav-image" src={nike}></img>
         <a className="nav-link" href="/">
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">

@@ -7,9 +7,10 @@
 
 .Nav {
   background-color: rgb(32, 28, 28);
-  height: 100vh;
   position: fixed;
+  height:100vh;
   border-right: 1px solid grey;
+  z-index: 3;
 
 }
 
@@ -24,6 +25,7 @@
 .nav-link {
   margin-bottom: 70px;
   color: darkgray;
+  padding-left: 40px;
 }
 
 #nav-link-mobile{
@@ -43,7 +45,7 @@
   .Nav-container{
     display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-right: 10px;
   }
   .Nav{
@@ -51,7 +53,7 @@
     height:14vh !important;
     position: fixed;
     top:0;
-    width:100%;
+    width:100vw;
     border-right: none;
     border-bottom: 1px solid grey;
   }
@@ -65,6 +67,6 @@
     display:none;
   }
   #nav-link-mobile{
-    display:inline !important;
+    display:block !important;
   }
 }

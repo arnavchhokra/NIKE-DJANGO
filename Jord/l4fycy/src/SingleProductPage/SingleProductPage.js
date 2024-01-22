@@ -25,12 +25,39 @@ const SingleProductPage = () => {
 
   let getProducts = async () => {
     let response = await fetch(`http://localhost:8000/Products/Products/${ProductId}/`)
-
     let data = await response.json()
     console.log(data)
     setProducts(data)
   }
-          
+
+
+  let addCart = async() => {
+    console.log("Hi")
+    try{
+    const authToken = localStorage.getItem('salesToken');
+    alert(ProductId, "is the productID")
+    let response = await fetch(`http://localhost:8000/User/addcart/${ProductId}`, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Authorization': `Bearer ${authToken}`,
+        'Content-Type': 'application/json',
+      },
+    })
+    if (response.status == 201) {
+      alert('Product added to Cart')
+    } else {
+      const error = new Error(response.statusText)
+      throw error;
+    }
+  } catch (err) {
+    console.log('err')
+    alert(err)
+    console.error(err)
+  }
+}
+
+
   return (
     <div className="SingleProductPage-Home">
       <Nav />
@@ -41,9 +68,7 @@ const SingleProductPage = () => {
         <div className="SingleProductPage-Content">
           <span className="SingleProductPage-Title">{Products.name}</span>
           <span className="SingleProductPage-Price">${Products.price}</span>
-          <Link className="SignleProductPage-Link" to={'/Cart'}>
-            <button className="SingleProductPage-button">ADD TO CART</button>
-          </Link>
+            <button className="SingleProductPage-button" onClick={addCart}>ADD TO CART</button>
           <span className="SingleProductPage-desc">{Products.desc}</span>
         </div>
       </div>

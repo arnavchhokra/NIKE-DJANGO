@@ -53,10 +53,10 @@ class UserAdmin(BaseUserAdmin):
     # The fields to be used in displaying the User model.
     # These override the definitions on the base UserAdmin
     # that reference specific fields on auth.User.
-    list_display = ("id", "email", "name", "is_admin", "cart")  #'cart'
+    list_display = ("id", "email", "name", "is_admin", "user_cart")  #'cart'
     list_filter = ("is_admin",)
     fieldsets = (
-        ("User Credentials", {"fields": ("email", "password", "cart")}),
+        ("User Credentials", {"fields": ("email", "password", "user_cart")}), #here
         ("Personal info", {"fields": ("name",)}),  #'cart'
         ("Permissions", {"fields": ("is_admin",)}),
     )
@@ -82,6 +82,5 @@ class UserAdmin(BaseUserAdmin):
 admin.site.register(MyUser, UserAdmin)
 admin.site.unregister(Group)
 admin.site.register(Cart)
-admin.site.register(CartItem)
 # admin.site.register(CartProducts)
 admin.site.register(OrderItem)

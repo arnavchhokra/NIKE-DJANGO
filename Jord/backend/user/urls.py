@@ -15,11 +15,9 @@ urlpatterns = [
     # path('User/Register/',views.Registration)
     path("login/", UserLoginView.as_view(), name="login"),
     path("profile/", UserProfileView.as_view(), name="profile"),
-    path("cart/", user_cart_items, name="cart"),
-    path("addCart/", add_cart_item, name="cart"),
-    path("removeCart/", remove_cart_item, name="cart"),
-    path("Order/", user_orders, name="cart"),
-    path("addOrder/", add_order, name="cart"),
+    path("addcart/<int:product_id>", add_to_cart, name="cart"),
+    path("removecart/<int:product_id>", remove_from_cart, name="cart"),
+    path("cart/", view_cart, name="cartview"),
     # path('notes/<str:pk>/update/', views.updateNote, name="update-note"),
     # path('notes/<str:pk>/delete/', views.deleteNote, name="delete-note"),
 ]

@@ -1,7 +1,15 @@
 import React from 'react'
 import './Signup.css'
 import { useNavigate } from "react-router-dom";
-
+import {
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+  ChakraProvider,
+  Button,
+  Input,
+} from '@chakra-ui/react'
 
 
 
@@ -27,29 +35,39 @@ const Login = ({login_api})=> {
 
 
   return (
-    <div className="Signup-home">
-      <form className="Signup-container">
-        <span className="Signup-create">Login</span>
-        <input type="text"
-          htmlFor="email"
-          name="email"
-          placeholder="Enter user"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-          value={email} className="Signup-Email"  />
-        <input  type="password"
-          htmlFor="password"
-          name="password"
-          placeholder="Enter password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-          value={password} className="Signup-Email"/>
-        <button type="submit" onClick={tryLogin} className="Signup-btn">Login</button>
-      </form>
-    </div>
-  )
+    <ChakraProvider>
+          <div className="Signup-home" style={{width:'200px', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', width:'100vw' }}>
+<FormControl isRequired  style={{width:'280px'}}>
+<FormLabel>Email address</FormLabel>
+<Input onChange={(e) => {
+          setEmail(e.target.value);
+        }}  type='email' />
+<FormLabel>Password</FormLabel>
+<Input  onChange={(e) => {
+          setPassword(e.target.value);
+        }}  type='password' />
+<Button
+          mt={4}
+          colorScheme='teal'
+          type='submit'
+          onClick={tryLogin}
+        >
+          Login
+        </Button>
+        <Button
+          mt={4}
+          colorScheme='teal'
+          type='submit'
+          style={{marginLeft:'20px'}}
+          onClick={() => window.location.href='/'}
+        >
+          Go Back
+        </Button><br/>
+        <a href='/signup'>Not a user?</a>
+</FormControl>
+</div>
+</ChakraProvider>
+)
 }
 
 export default Login
