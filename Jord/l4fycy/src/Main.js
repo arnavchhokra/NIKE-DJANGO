@@ -40,7 +40,7 @@ function Main() {
       fail("password2: Passwords do not match");
       return;
     }
-  
+
     // Make the API request
     const response = await fetch("http://127.0.0.1:8000/User/User/Register/", {
       method: "POST",
@@ -55,9 +55,9 @@ function Main() {
         password2: password2,
       }),
     });
-  
+
     const text = await response.text();
-  
+
     if (response.status === 201) {
       console.log("success", JSON.parse(text));
       success(JSON.parse(text));
@@ -68,7 +68,7 @@ function Main() {
       });
     }
   };
-  
+
 
 
   return (
