@@ -24,10 +24,18 @@ const SingleProductPage = () => {
   }, [])
 
   let getProducts = async () => {
-    let response = await fetch(`http://localhost:8000/Products/Products/${ProductId}/`)
-    let data = await response.json()
-    console.log(data)
-    setProducts(data)
+
+    try{
+      let response = await fetch(`http://localhost:8000/Products/Products/${ProductId}/`)
+      let data = await response.json()
+      console.log(data)
+      setProducts(data)
+    }
+    catch(e)
+    {
+      console.log(e)
+    }
+
   }
 
 

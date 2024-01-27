@@ -10,9 +10,16 @@ const NotePage = ({ match, history }) => {
   }, [ProductId])
 
   let getProducts = async () => {
-    let response = await fetch(`/Products/Products/${ProductId}/`)
-    let data = await response.json()
-    setProduct(data)
+
+    try{
+      let response = await fetch(`/Products/Products/${ProductId}/`)
+      let data = await response.json()
+      setProduct(data)
+    }catch(e)
+    {
+      console.log(e)
+    }
+
   }
 
   return <div className="note">{Products.desc}</div>

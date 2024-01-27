@@ -11,9 +11,16 @@ const Products = () => {
   }, [])
 
   let getProducts = async () => {
-    let response = await fetch('http://localhost:8000/Products/Products/')
-    let data = await response.json()
-    setProducts(data)
+    try{
+      let response = await fetch('http://localhost:8000/Products/Products/')
+      let data = await response.json()
+      setProducts(data)
+    }
+    catch(e)
+    {
+      console.log(e)
+    }
+
   }
 
   return (

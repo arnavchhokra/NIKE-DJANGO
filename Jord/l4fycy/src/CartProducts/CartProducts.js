@@ -25,11 +25,18 @@ const CartProducts = (Props) => {
   }, [])
 
   let getProducts = async () => {
-    let response = await fetch(`http://localhost:8000/Products/Products/${ProductId}/`)
+    try{
+      let response = await fetch(`http://localhost:8000/Products/Products/${ProductId}/`)
 
-    let data = await response.json()
-    console.log(data)
-    setProducts(data)
+      let data = await response.json()
+      console.log(data)
+      setProducts(data)
+    }
+    catch(e)
+    {
+      console.log(e)
+    }
+
   }
 
   let removeCart = async() => {
