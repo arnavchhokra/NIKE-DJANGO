@@ -1,6 +1,5 @@
 .home {
   background-color: rgb(32, 28, 28);
-  border-radius: 10px;
 }
 
 @media screen and (max-width: 500px) {
@@ -56,24 +55,20 @@
 
 @media screen and (max-width: 1130px) {
 
-   .threename{
-  display:none !important;
- }
- .threesixty {
-  margin-left: 0vw !important;
- }
+.threename{
+  display:none;
+}
  .changing {
   margin-left: 0vw !important;
  }
- .three{
-  width:800px !important;
- }
+
  .Liq{
   display: none !important;
  }
  .home-yt {
   margin-left: 0px !important;
   width:100vw;
+  justify-content: center !important;
  }
  .home-banner{
 
@@ -83,25 +78,53 @@
   width:100vw;
   margin-left: 0px !important;
  }
+ .home{
+  display: block;
+ }
+ .home-container{
+  width:100vw;
+ }
+
+  .threesixty {
+  margin-left: 0vw !important;
+ }
+ .three{
+  position: absolute;
+  top: 58% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  height:80vh;
+ }
+ .home-banner{
+  align-items: center !important;
+  margin-top: 30vh;
+ }
 
 }
+
+
+
 
 
 .home-container {
   background-color: rgb(32, 28, 28);
   height: 100vh;
   box-shadow: 0 0px  rgba(0, 0, 0, 0.3), 0 0px 0px rgba(0, 0, 0, 0.22);
+  overflow-x: clip;
+
 }
 
 .three {
   position: absolute;
   z-index: 0;
-  left: 25vw;
-  right: 0;
-  top: 170px;
-  bottom: 0;
-  margin-left: -130px;
-  width: 1000px;
+  width: 600px !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  height:400px;
+max-width: 95vw;
+
 }
 
 .home-banner {
@@ -159,10 +182,11 @@ margin-left: 27vh;
   font-size: 10vw;
   overflow: hidden;
   transform: rotate(90deg);
-  position:absolute;
-  left:70vw;
-  top:20vw;
-  width:80vh;
+  position: absolute;
+  top: 38%;
+  left:62%;
+  width:800px;
+  text-align: center;
 }
 
 
@@ -223,8 +247,8 @@ margin-left: 27vh;
 .home-yt {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 display: flex;
-justify-content: center;
-margin-left: 0px !important;
+justify-content: flex-end;
+
 }
 
 
