@@ -8,8 +8,6 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseU
 
 class Cart(models.Model):
     cartproduct = models.ManyToManyField("Products.Products", null = True, related_name='cartss', blank = True)
-    #CartProducts = models.ForeignKey(Products, blank=True, null=True, on_delete=models.PROTECT)
-    #CartProducts = models.ManyToManyField(CartItem, blank=True)
 
 
 class MyUserManager(BaseUserManager):
