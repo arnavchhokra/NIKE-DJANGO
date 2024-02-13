@@ -10,6 +10,7 @@ import {
   Button,
   Input,
 } from '@chakra-ui/react'
+import { Link } from 'react-router-dom';
 
 
 
@@ -63,7 +64,7 @@ const Login = ({login_api})=> {
         >
           Go Back
         </Button><br/>
-        <a href='/signup'>Not a user?</a>
+        <Link  to={'/signup'}>Not a user?</Link>
 </FormControl>
 </div>
 </ChakraProvider>

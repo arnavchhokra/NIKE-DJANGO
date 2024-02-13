@@ -74,7 +74,7 @@ function Signup({signup_api}) {
           >
             Go Back
           </Button><br/>
-          <a href='/login'>Already a user?</a>
+          <Link  to={'/login'}>Already a user?</Link>
 
 </FormControl>
 </div>
