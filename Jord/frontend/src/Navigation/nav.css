@@ -63,10 +63,7 @@
 
 }
 @media screen and (max-width: 500px) {
-  .nav-link{
+  .nav-image{
     display:none;
-  }
-  #nav-link-mobile{
-    display:block !important;
   }
 }
