@@ -11,7 +11,7 @@ import Profile from './User/Profile'
 
 function Rout() {
   const login_api = async (email, password, success, fail) => {
-    const response = await fetch(`http://127.0.0.1:8000/User/api/token/`, {
+    const response = await fetch(`https://nike-uoc4.onrender.com/User/api/token/`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -42,7 +42,7 @@ function Rout() {
     }
 
     // Make the API request
-    const response = await fetch("http://127.0.0.1:8000/User/User/Register/", {
+    const response = await fetch("https://nike-uoc4.onrender.com/User/User/Register/", {
       method: "POST",
       headers: {
         Accept: "application/json",

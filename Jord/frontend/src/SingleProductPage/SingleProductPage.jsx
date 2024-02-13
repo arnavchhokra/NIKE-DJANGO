@@ -26,7 +26,7 @@ const SingleProductPage = () => {
   let getProducts = async () => {
 
     try{
-      let response = await fetch(`http://localhost:8000/Products/Products/${ProductId}/`)
+      let response = await fetch(`https://nike-uoc4.onrender.com/Products/Products/${ProductId}/`)
       let data = await response.json()
       console.log(data)
       setProducts(data)
@@ -44,7 +44,7 @@ const SingleProductPage = () => {
     try{
     const authToken = localStorage.getItem('salesToken');
     alert(ProductId, "is the productID")
-    let response = await fetch(`http://localhost:8000/User/addcart/${ProductId}`, {
+    let response = await fetch(`https://nike-uoc4.onrender.com/User/addcart/${ProductId}`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',

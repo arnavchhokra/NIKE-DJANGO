@@ -15,7 +15,7 @@ const Profile = () => {
   const authenticate = async () => {
     try {
       console.log(localStorage.getItem('salesToken'))
-      const res = await fetch('http://localhost:8000/User/api/token/verify/', {
+      const res = await fetch('https://nike-uoc4.onrender.com/User/api/token/verify/', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -55,7 +55,7 @@ const Profile = () => {
   const getdetails = async () => {
     try {
       console.log(localStorage.getItem('salesToken'))
-      const res = await fetch('http://localhost:8000/User/profile/', {
+      const res = await fetch('https://nike-uoc4.onrender.com/User/profile/', {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('salesToken')}`

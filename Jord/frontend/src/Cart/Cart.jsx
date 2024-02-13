@@ -41,7 +41,7 @@ function Cart() {
   const getcart = async () => {
     try {
       console.log(localStorage.getItem('salesToken'))
-      const res = await fetch('http://localhost:8000/User/cart/', {
+      const res = await fetch('https://nike-uoc4.onrender.com/User/cart/', {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('salesToken')}`

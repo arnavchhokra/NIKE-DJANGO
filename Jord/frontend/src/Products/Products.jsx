@@ -12,7 +12,7 @@ const Products = () => {
 
   let getProducts = async () => {
     try{
-      let response = await fetch('http://localhost:8000/Products/Products/')
+      let response = await fetch('https://nike-uoc4.onrender.com/Products/Products/')
       let data = await response.json()
       setProducts(data)
     }
