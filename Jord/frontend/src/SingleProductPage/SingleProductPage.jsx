@@ -43,7 +43,6 @@ const SingleProductPage = () => {
     console.log("Hi")
     try{
     const authToken = localStorage.getItem('salesToken');
-    alert(ProductId, "is the productID")
     let response = await fetch(`https://nike-uoc4.onrender.com/User/addcart/${ProductId}`, {
       method: 'POST',
       headers: {
@@ -60,8 +59,7 @@ const SingleProductPage = () => {
     }
   } catch (err) {
     console.log('err')
-    alert(err)
-    console.error(err)
+    alert("Please login to add to cart")
   }
 }
 
