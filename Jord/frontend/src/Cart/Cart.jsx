@@ -75,7 +75,7 @@ useEffect(() => {
     <div className="Cart-Home">
       <div className="Cart-Container" >
         <Nav  />
-<div style={{display:'flex', justifyContent:'center', width:'100%',gap:'30px',alignItems:'flex-start'}}>
+<div style={{display:'flex', justifyContent:'center', width:'100%',gap:'30px',alignItems:'flex-start', background:'black', height:'100vh'}}>
 {loading ? ( // Render loader if loading is true
             <div>Loading...</div>
           ) : (
