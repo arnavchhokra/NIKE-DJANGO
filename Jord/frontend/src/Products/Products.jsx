@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 
 const Products = () => {
   let [Products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true); // State to track loading status
+
 
   useEffect(() => {
     getProducts()
@@ -20,11 +22,18 @@ const Products = () => {
     {
       console.log(e)
     }
+    finally {
+      setLoading(false); // Set loading to false after fetching is done
+    }
 
   }
 
   return (
     <div className="products-home" >
+      {loading ? ( // Render loader if loading is true
+            <div>Loading...</div>
+          ) : (
+            <>
       {Products.map((Products, index) => (
         <div className="Product-container">
           <Link className="Product-link" to={`/Products/${Products.id}`}>
@@ -36,6 +45,8 @@ const Products = () => {
           </Link>
         </div>
       ))}
+       </>
+          )}
     </div>
   )
 }

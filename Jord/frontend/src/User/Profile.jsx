@@ -7,6 +7,7 @@ const Profile = () => {
   let navigate = useNavigate()
   const [name, setName] = useState('name')
   const [email, setEmail] = useState('name@example.com')
+  const [loader, setLoader] = useState(true); // State to track loading status
 
   useEffect(() => {
     authenticate()
@@ -74,6 +75,8 @@ const Profile = () => {
     } catch (e) {
       console.log('outer error')
       console.log(e)
+    }finally {
+      setLoader(false); // Set loading to false after fetching is done
     }
   }
 
@@ -84,14 +87,28 @@ const Profile = () => {
 
   return (
     <div className="Profile">
+
       <div style={{ color: 'white' }} className="Profile-Name">
         {a()}
+      {loader ? ( // Render loader if loading is true
+            <div>Loading...</div>
+          ) : (
+            <>
         Hi, {name}
+        </>
+          )}
       </div>
       <div style={{ color: 'white' }} className="Profile-Email">
+      {loader ? ( // Render loader if loading is true
+            <div>Loading...</div>
+          ) : (
+            <>
         Email: {email}
+        </>
+          )}
       </div>
       <button onClick={logout}>LogOut</button>
+
     </div>
   )
 }

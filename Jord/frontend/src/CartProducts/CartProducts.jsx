@@ -18,6 +18,8 @@ const CartProducts = (Props) => {
   const { ProductId } = Props;
   console.log(ProductId)
   let [Products, setProducts] = useState([ProductId])
+  const [loading, setLoading] = useState(true); // State to track loading status
+
 
 
   useEffect(() => {
@@ -35,6 +37,8 @@ const CartProducts = (Props) => {
     catch(e)
     {
       console.log(e)
+    } finally {
+      setLoading(false); // Set loading to false after fetching is done
     }
 
   }

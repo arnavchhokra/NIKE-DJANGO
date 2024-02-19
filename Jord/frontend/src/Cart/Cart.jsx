@@ -29,6 +29,8 @@ function Cart() {
   const ProductID = shared()
   console.log(ProductID)
   let [cartproducts, setCartProducts] = useState([])
+  const [loading, setLoading] = useState(true);
+
 
 
   useEffect(() => {
@@ -59,6 +61,8 @@ function Cart() {
     } catch (e) {
       alert('outer error')
       console.log(e)
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -72,6 +76,10 @@ useEffect(() => {
       <div className="Cart-Container" >
         <Nav  />
 <div style={{display:'flex', justifyContent:'center', width:'100%',gap:'30px',alignItems:'flex-start'}}>
+{loading ? ( // Render loader if loading is true
+            <div>Loading...</div>
+          ) : (
+            <>
         <div className="Cart-products-rows">
           {
             cartproducts.map((cartproduct, index) => (
@@ -80,36 +88,9 @@ useEffect(() => {
           }
         </div>
         <div className="Cart-payment-info">
-        <TableContainer>
-  <Table variant='simple' size='lg' style={{textAlign:'left', }}>
-    <Thead>
-      <Tr>
-        <Th>Item</Th>
-        <Th> Price</Th>
-      </Tr>
-    </Thead>
-    <Tbody>
-      <Tr>
-        <Td>inches</Td>
-        <Td isNumeric>25.4</Td>
-      </Tr>
-      <Tr>
-        <Td>feet</Td>
-        <Td isNumeric>30.48</Td>
-      </Tr>
-      <Tr>
-        <Td>yards</Td>
-        <Td isNumeric>0.91444</Td>
-      </Tr>
-    </Tbody>
-  </Table>
-  <Stat style={{border: '1px solid grey', marginTop:'10px', padding:'10px', paddingTop:'5px', borderRadius:'5px'}}>
-  <StatLabel>Total Charges</StatLabel>
-  <StatNumber>$0.00</StatNumber>
-  <StatHelpText> Expected Delivery: Feb 12 - Feb 28</StatHelpText>
-</Stat>
-</TableContainer>
         </div>
+        </>
+          )}
         </div>
       </div>
     </div>
